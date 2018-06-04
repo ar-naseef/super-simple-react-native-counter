@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
+import Count from '../count/count.js'
+
 export default class counter extends Component {
 
     constructor(props) {
@@ -37,7 +39,7 @@ export default class counter extends Component {
                 title="increnent +"
                 color="#333"
             ><Text style={styles.butText}>increment +</Text></TouchableOpacity>
-            <Text style={styles.count}>{this.state.count}</Text>
+            <Count value={this.state.count} />
             <TouchableOpacity
                 style={styles.button2}
                 onPress={this.decrement.bind(this)}
@@ -69,10 +71,6 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: '#555',
 	    borderRadius:5
-    },
-    count: {
-        fontSize: 50,
-        padding: 40
     },
     reset: {
         marginTop: 20,
